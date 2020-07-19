@@ -1,0 +1,8 @@
+Package: xfswitch
+Version: 1.0
+Architecture: all
+Maintainer: CentRa <centra-linux@protonmail.com>
+Depends: bash xfce4-panel
+Section: utils
+Priority: optional
+Description: Xfceでタブレットモードとほかを行き来するよーん

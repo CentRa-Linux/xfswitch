@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if [[ `cat ~/.config/switch/type.dat` = "0" ]]; then
+	xfconf-query -c xfwm4 -p /general/titleless_maximize -s false
+	pkill xfce4-panel
+	pkill xfconfd
+	cp ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml ~/.config/switch/tablet.xml
+	cp ~/.config/switch/desktop.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+	echo "1" > ~/.config/switch/type.dat
+elif [[ `cat ~/.config/switch/type.dat` = "1" ]]; then
+	xfconf-query -c xfwm4 -p /general/titleless_maximize -s true
+	pkill xfce4-panel
+	pkill xfconfd
+	cp ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml ~/.config/switch/desktop.xml
+	cp ~/.config/switch/tablet.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+	echo "0" > ~/.config/switch/type.dat
+fi
+xfce4-panel &
