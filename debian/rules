@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+#
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_INSTALL_DIRS_xfswitch = \
+	/usr/bin \
+	/usr/share/xfswitch
+
+install/xfswitch::
+
+	cp -ar usr/bin/* debian/xfswitch/usr/bin
+	cp -ar usr/share/xfswitch/* debian/xfswitch/usr/share/xfswitch

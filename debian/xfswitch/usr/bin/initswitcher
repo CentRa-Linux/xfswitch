@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir ~/.config/switch
+cp /usr/share/xfswitch/desktop.xml ~/.config/switch/desktop.xml
+cp /usr/share/xfswitch/tablet.xml ~/.config/switch/tablet.xml
+cp /usr/share/xfswitch/type.dat ~/.config/switch/type.dat
